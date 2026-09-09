@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lecture — VelvetChapters</title>
+  <link rel="icon" type="image/png" href="assets/images/icone.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html">
+      <img src="assets/images/logo.png" alt="VelvetChapters">
+    </a>
+    <nav>
+      <a href="index.html">Sommaire</a>
+      <a href="editor.html">Écrire</a>
+    </nav>
+  </header>
+
+  <main class="reader-shell">
+    <article id="reader" class="book-page"></article>
+
+    <div class="reader-actions">
+  <a id="edit-chapter-link" class="button" href="#">
+    Modifier ce chapitre
+  </a>
+</div>
+
+    <div class="reader-nav">
+      <button id="prev-chapter" type="button">← Précédent</button>
+      <a href="index.html">Sommaire</a>
+      <button id="next-chapter" type="button">Suivant →</button>
+    </div>
+  </main>
+
+  <script src="js/reader.js"></script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Écrire — VelvetChapters</title>
+  <link rel="icon" type="image/png" href="assets/images/icone.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html">
+      <img src="assets/images/logo.png" alt="VelvetChapters">
+    </a>
+    <nav>
+      <a href="index.html">Sommaire</a>
+      <a href="editor.html">Écrire</a>
+    </nav>
+  </header>
+
+  <main class="editor-shell">
+    <section class="editor-card">
+      <p class="eyebrow" id="editor-mode-label">Nouveau chapitre</p>
+      <h1 id="editor-title">Écrire</h1>
+
+      <input id="editing-id" type="hidden">
+
+      <label for="chapter-number">Numéro du chapitre</label>
+      <input id="chapter-number" type="number" min="1" placeholder="3">
+
+      <label for="chapter-title">Titre</label>
+      <input id="chapter-title" type="text" placeholder="Titre du chapitre">
+
+      <label for="chapter-content">Texte</label>
+      <textarea id="chapter-content" rows="18" placeholder="Commence à écrire ici..."></textarea>
+
+      <div class="editor-actions">
+        <button id="save-chapter" type="button">Sauvegarder le chapitre</button>
+        <button id="cancel-edit" type="button" class="secondary-button" hidden>Annuler la modification</button>
+        <button id="export-json" type="button" class="secondary-button">Exporter les chapitres locaux en JSON</button>
+      </div>
+
+      <p id="editor-status" class="status"></p>
+    </section>
+
+    <section class="editor-card local-list-card">
+      <p class="eyebrow">Gestion</p>
+      <h2>Mes chapitres locaux</h2>
+      <p class="helper-text">
+        Les chapitres créés depuis cette page sont enregistrés dans ce navigateur.
+        Tu peux les modifier ou les supprimer ici.
+      </p>
+      <div id="local-chapter-list" class="local-chapter-list"></div>
+    </section>
+  </main>
+
+  <script src="js/editor.js?v=3"></script>
+</body>
+</html>
