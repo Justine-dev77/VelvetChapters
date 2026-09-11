@@ -9,6 +9,7 @@ Cette version permet :
 - de lire les chapitres depuis le sommaire ;
 - d'exporter les chapitres locaux en JSON.
 
+
 ## Limitation actuelle
 
 VelvetChapters est actuellement déployé comme site statique avec GitHub Pages.
@@ -27,5 +28,6 @@ Ils sont identifiés par un badge **« Local uniquement — non publié »** et 
 Les chapitres publics, eux, sont chargés depuis le fichier `data/chapters.json` et sont visibles par tous les visiteurs du site.
 
 Cette distinction permet d’utiliser VelvetChapters comme espace de brouillon local avant publication.
+
 
 JustineDev ♥
