@@ -10,7 +10,7 @@ Cette version permet :
 - d'exporter les chapitres locaux en JSON.
 
 
-## Limitation actuelle
+> ## Limitation actuelle
 
 VelvetChapters est actuellement déployé comme site statique avec GitHub Pages.
 
@@ -19,7 +19,7 @@ Les chapitres publics sont chargés depuis `data/chapters.json`. Les chapitres c
 Une prochaine version pourra intégrer un backend ou une base de données afin de permettre la publication et la synchronisation des chapitres.
 
 
-### Chapitres locaux
+> ### Chapitres locaux
 
 Les chapitres créés depuis l’éditeur intégré sont enregistrés localement dans le navigateur grâce à `localStorage`.
 
