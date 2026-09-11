@@ -321,6 +321,23 @@ button:disabled {
   gap: 8px;
 }
 
+.local-badge {
+  display: inline-block;
+  margin: 8px 0 14px;
+  padding: 5px 10px;
+
+  border: 1px solid rgba(194, 139, 207, 0.45);
+  border-radius: 999px;
+
+  background: rgba(194, 139, 207, 0.08);
+  color: #d8a9e3;
+
+  font-family: Arial, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
 footer {
   padding: 32px 6vw;
   text-align: center;

@@ -4,7 +4,10 @@ async function getAllChapters() {
 
   const localChapters = JSON.parse(
     localStorage.getItem("velvetchapters-chapters") || "[]"
-  );
+  ).map(chapter => ({
+    ...chapter,
+    isLocal: true
+  }));
 
   return [...jsonChapters, ...localChapters]
     .sort((a, b) => Number(a.number ?? a.id) - Number(b.number ?? b.id));
@@ -24,10 +27,18 @@ async function loadChapters() {
     list.innerHTML = chapters.map(chapter => `
       <a class="chapter-card" href="reader.html?id=${encodeURIComponent(chapter.id)}">
         <p class="eyebrow">Chapitre ${chapter.number ?? chapter.id}</p>
+
+        ${chapter.isLocal ? `
+          <span class="local-badge">
+            Local uniquement — non publié
+          </span>
+        ` : ""}
+
         <h3>${chapter.title}</h3>
         <p>${chapter.summary || "Lire le chapitre"}</p>
       </a>
     `).join("");
+
   } catch (error) {
     list.innerHTML = "<p>Impossible de charger les chapitres.</p>";
     console.error(error);

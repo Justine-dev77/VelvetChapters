@@ -4,7 +4,10 @@ async function getAllChapters() {
 
   const localChapters = JSON.parse(
     localStorage.getItem("velvetchapters-chapters") || "[]"
-  );
+  ).map(chapter => ({
+    ...chapter,
+    isLocal: true
+  }));
 
   return [...jsonChapters, ...localChapters]
     .sort((a, b) => Number(a.number ?? a.id) - Number(b.number ?? b.id));
@@ -15,6 +18,7 @@ async function loadChapter() {
   const id = params.get("id");
 
   const chapters = await getAllChapters();
+
   const index = chapters.findIndex(
     chapter => String(chapter.id) === String(id)
   );
@@ -31,10 +35,7 @@ async function loadChapter() {
 
   const editLink = document.querySelector("#edit-chapter-link");
 
-  if (
-    String(chapter.id).startsWith("local-") ||
-    Number(chapter.id) >= 100
-  ) {
+  if (chapter.isLocal) {
     editLink.href =
       `editor.html?id=${encodeURIComponent(chapter.id)}`;
   } else {
@@ -45,6 +46,12 @@ async function loadChapter() {
     <p class="eyebrow">
       Chapitre ${chapter.number ?? chapter.id}
     </p>
+
+    ${chapter.isLocal ? `
+      <span class="local-badge">
+        Local uniquement — non publié
+      </span>
+    ` : ""}
 
     <h1>${chapter.title}</h1>
 
